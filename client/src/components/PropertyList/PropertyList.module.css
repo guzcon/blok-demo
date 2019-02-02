@@ -1,0 +1,31 @@
+.list_container {
+  height: calc(100vh - 100px);
+}
+
+.list {
+  outline: none;
+}
+
+.items_wrap {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .items_wrap {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .items_wrap {
+    max-width: 940px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .items_wrap {
+    max-width: 1140px;
+  }
+}

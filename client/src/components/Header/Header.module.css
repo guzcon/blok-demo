@@ -1,0 +1,6 @@
+.header {
+  margin: 0;
+  padding: var(--space-sm);
+  background: white;
+  text-align: center;
+}
