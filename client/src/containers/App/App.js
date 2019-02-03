@@ -12,6 +12,7 @@ class App extends Component {
   };
 
   componentDidMount = () => {
+    // fetch properties
     this.loadProperties()
       .then(res => this.setState({list: res.payload, isLoading: false}) )
       .catch(err => console.log(err));

@@ -9,6 +9,7 @@ import styles from './PropertyList.module.css';
 
 class PropertyList extends Component {
   state = {
+    // cache the row size for CellMeasurer
     cache: new CellMeasurerCache({
       fixedWidth: true,
       defaultHeight: 500
@@ -25,6 +26,7 @@ class PropertyList extends Component {
     window.removeEventListener('resize', this.setItemsPerRow);
   }
 
+  // set items per row depending on window width
   setItemsPerRow = () => {
     const windowWidth = window.innerWidth;
     let itemsPerRow = 1;

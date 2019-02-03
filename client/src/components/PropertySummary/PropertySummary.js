@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './PropertySummary.module.css';
 
+// this component doesn't have any outer padding / margin / background on purpose, to keep it versatile in different layout
 const PropertySummary = ({item, addressClass}) => (
   <div>
     <h3 className={addressClass ? `${addressClass} ${styles.address}` : styles.address}>{item.street_address}</h3>

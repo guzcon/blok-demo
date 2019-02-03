@@ -1,3 +1,6 @@
+/***** NOTE: this file contains only global style of the app,
+component style should stay with its own module css file ********/
+
 /**** global style ****/
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
