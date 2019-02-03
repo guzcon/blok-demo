@@ -12,6 +12,12 @@
   margin: auto;
 }
 
+@media (max-width: 767px) {
+  .items_wrap {
+    justify-content: center;
+  }
+}
+
 @media (min-width: 768px) {
   .items_wrap {
     max-width: 720px;
@@ -20,12 +26,12 @@
 
 @media (min-width: 992px) {
   .items_wrap {
-    max-width: 940px;
+    max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
   .items_wrap {
-    max-width: 1140px;
+    max-width: 1080px;
   }
 }

@@ -3,4 +3,5 @@
   padding: var(--space-sm);
   background: white;
   text-align: center;
+  color: var(--color-pink);
 }

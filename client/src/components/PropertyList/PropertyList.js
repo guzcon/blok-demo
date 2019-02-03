@@ -16,28 +16,28 @@ class PropertyList extends Component {
     itemSize: 360
   }
 
-  // componentDidMount() {
-  //   this.updateItemSize();
-  //   window.addEventListener('resize', this.updateItemSize);
-  // }
-  //
-  // componentWillUnmount() {
-  //   window.removeEventListener('resize', this.updateItemSize);
-  // }
-  //
-  // updateItemSize = () => {
-  //   const windowWidth = window.innerWidth;
-  //   let itemSize = 500;
-  //   if ((windowWidth >= 768 && windowWidth < 1079) || windowWidth > 1200) {
-  //     itemSize = 360;
-  //   } else if (windowWidth >= 992 && windowWidth < 1200){
-  //     itemSize = 320;
-  //   }
-  //
-  //   console.log(itemSize);
-  //
-  //   this.setState({itemSize});
-  // }
+  componentDidMount() {
+    this.updateItemSize();
+    window.addEventListener('resize', this.updateItemSize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateItemSize);
+  }
+
+  updateItemSize = () => {
+    const windowWidth = window.innerWidth;
+    let itemSize = 500;
+    if ((windowWidth >= 768 && windowWidth < 992) || windowWidth > 1200) {
+      itemSize = 360;
+    } else if (windowWidth >= 992 && windowWidth < 1200){
+      itemSize = 320;
+    }
+
+    console.log(itemSize);
+
+    this.setState({itemSize});
+  }
 
   render() {
     const {list} = this.props;
@@ -46,7 +46,7 @@ class PropertyList extends Component {
       <div className={styles.list_container}>
         <AutoSizer>
           {({ height, width }) => {
-            const itemsPerRow = Math.floor(width / itemSize);
+            const itemsPerRow = Math.floor(width / itemSize) > 1 ? Math.floor(width / itemSize) : 1 ;
             const rowCount = Math.ceil(list.length / itemsPerRow);
 
             return <List
