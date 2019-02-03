@@ -1,0 +1,24 @@
+.modal_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal_title {
+  padding-left: var(--space-sm);
+  font-size: 1.2rem;
+}
+
+.close {
+  margin-left: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  border: 0;
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus,
+.close:active {
+  background-color: var(--gray-100);
+}

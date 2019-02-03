@@ -4,28 +4,28 @@ import { AutoSizer,
         List,
         CellMeasurer,
         CellMeasurerCache } from 'react-virtualized';
-import PropertyItem from '../PropertyItem/PropertyItem';
+import PropertyItem from '../../components/PropertyItem/PropertyItem';
 import styles from './PropertyList.module.css';
 
 class PropertyList extends Component {
   state = {
     cache: new CellMeasurerCache({
       fixedWidth: true,
-      defaultHeight: 500,
+      defaultHeight: 500
     }),
     itemSize: 360
   }
 
   componentDidMount() {
-    this.updateItemSize();
-    window.addEventListener('resize', this.updateItemSize);
+    this.getItemSize();
+    window.addEventListener('resize', this.getItemSize);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateItemSize);
+    window.removeEventListener('resize', this.getItemSize);
   }
 
-  updateItemSize = () => {
+  getItemSize = () => {
     const windowWidth = window.innerWidth;
     let itemSize = 500;
     if ((windowWidth >= 768 && windowWidth < 992) || windowWidth > 1200) {
@@ -33,8 +33,6 @@ class PropertyList extends Component {
     } else if (windowWidth >= 992 && windowWidth < 1200){
       itemSize = 320;
     }
-
-    console.log(itemSize);
 
     this.setState({itemSize});
   }

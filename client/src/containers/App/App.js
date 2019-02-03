@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header/Header';
-import PropertyList from '../../components/PropertyList/PropertyList';
+import Spinner from '../../components/Spinner/Spinner';
+import PropertyList from '../PropertyList/PropertyList';
+import styles from './App.module.css';
 
 class App extends Component {
 
   state = {
-    list: []
+    list: null,
+    isLoading: true
   };
 
   componentDidMount = () => {
     this.loadProperties()
-      .then(res => this.setState({list: res.payload}));
+      .then(res => this.setState({list: res.payload, isLoading: false}) )
+      .catch(err => console.log(err));
   }
 
   loadProperties = async () => {
@@ -21,14 +25,21 @@ class App extends Component {
   };
 
   render() {
-    const {list} = this.state;
+    const {list, isLoading} = this.state;
     return (
       <div className="App">
         <Header title="Find your next home with Blok" />
-        {this.state.list &&
+        {list &&
           <PropertyList
             list={list}
           />
+        }
+        {!list && isLoading &&
+          <div style={{marginTop: '200px', textAlign: 'center'}}><Spinner /></div>
+
+        }
+        {!list && !isLoading &&
+          <p className={styles.error_container}>Some error occurred. Try again by refreshing the page.</p>
         }
       </div>
     );

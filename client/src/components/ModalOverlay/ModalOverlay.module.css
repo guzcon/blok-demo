@@ -1,0 +1,11 @@
+.modal_overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(2,38,64);
+  background-color: rgba(2,38,64,0.85);
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}

@@ -1,0 +1,34 @@
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin: var(--space-sm) 0;
+}
+
+.price {
+  margin-left: var(--space-xs);
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-pink);
+}
+
+.map_link {
+  display: flex;
+  align-items: center;
+  margin-top: var(--space-md);
+}
+
+.map_link:hover,
+.map_link:focus,
+.map_link:active {
+  color: var(--color-pink);
+}
+
+.map_link_label {
+  margin-left: var(--space-xs);
+}
+
+@media (min-width: 768px) {
+  .price {
+    font-size: 1.8rem;
+  }
+}

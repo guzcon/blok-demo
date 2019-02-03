@@ -1,0 +1,38 @@
+.item {
+  flex: 0 0 90%;
+  margin-top: var(--space-md);
+  padding: 0 var(--space-sm);
+  cursor: pointer;
+}
+
+.item:hover .address {
+  color: var(--color-pink);
+}
+
+.item:hover .img_label {
+  background-color: var(--color-pink);
+}
+
+.card_info {
+  padding: var(--space-sm);
+  background-color: white;
+}
+
+
+@media (min-width: 768px) {
+  .item {
+    flex: 0 0 360px;
+  }
+}
+
+@media (min-width: 992px) {
+  .item {
+    flex: 0 0 320px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .item {
+    flex: 0 0 360px;
+  }
+}

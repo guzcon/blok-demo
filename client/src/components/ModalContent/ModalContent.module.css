@@ -1,0 +1,12 @@
+.modal_content {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  max-height: 90%; /* Full height */
+  overflow: auto;
+  background-color: white;
+  width: 90%; /* Could be more or less, depending on screen size */
+  max-width: 600px;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
