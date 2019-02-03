@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+// react-virtualized to improve performance. 
+// AutoSizer to size List dynamically
+// CellMeasurer and CellMeasurerCache is for calculating row height dynamically.
 import { AutoSizer,
         List,
         CellMeasurer,
