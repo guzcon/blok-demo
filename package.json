@@ -1,5 +1,5 @@
 {
-  "name": "dreamhouse-demo-app",
+  "name": "blok-demo",
   "version": "1.0.0",
   "scripts": {
     "client": "cd client && yarn start",
