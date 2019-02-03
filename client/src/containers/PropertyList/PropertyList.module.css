@@ -3,6 +3,7 @@
 }
 
 .list {
+  padding-bottom: var(--space-md);
   outline: none;
 }
 
