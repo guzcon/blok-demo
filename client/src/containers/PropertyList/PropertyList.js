@@ -13,38 +13,38 @@ class PropertyList extends Component {
       fixedWidth: true,
       defaultHeight: 500
     }),
-    itemSize: 360
+    itemsPerRow: 1
   }
 
   componentDidMount() {
-    this.getItemSize();
-    window.addEventListener('resize', this.getItemSize);
+    this.setItemsPerRow();
+    window.addEventListener('resize', this.setItemsPerRow);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.getItemSize);
+    window.removeEventListener('resize', this.setItemsPerRow);
   }
 
-  getItemSize = () => {
+  setItemsPerRow = () => {
     const windowWidth = window.innerWidth;
-    let itemSize = 500;
-    if ((windowWidth >= 768 && windowWidth < 992) || windowWidth > 1200) {
-      itemSize = 360;
-    } else if (windowWidth >= 992 && windowWidth < 1200){
-      itemSize = 320;
+    let itemsPerRow = 1;
+    if (windowWidth >= 768 && windowWidth < 992) {
+      itemsPerRow = 2;
+    } else if (windowWidth >= 992){
+      itemsPerRow = 3;
+    } else {
+      itemsPerRow = 1;
     }
-
-    this.setState({itemSize});
+    this.setState({itemsPerRow});
   }
 
   render() {
     const {list} = this.props;
-    const {cache, itemSize} = this.state;
+    const {cache, itemsPerRow} = this.state;
     return (
       <div className={styles.list_container}>
         <AutoSizer>
           {({ height, width }) => {
-            const itemsPerRow = Math.floor(width / itemSize) > 1 ? Math.floor(width / itemSize) : 1 ;
             const rowCount = Math.ceil(list.length / itemsPerRow);
 
             return <List

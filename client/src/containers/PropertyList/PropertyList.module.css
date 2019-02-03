@@ -1,5 +1,5 @@
 .list_container {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 61px);
 }
 
 .list {
@@ -25,6 +25,10 @@
 }
 
 @media (min-width: 992px) {
+  .list_container {
+    height: calc(100vh - 80px);
+  }
+
   .items_wrap {
     max-width: 960px;
   }
